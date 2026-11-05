@@ -26,10 +26,10 @@
 |---:|---|---|---|
 | 1 | Tính đúng đắn và mức độ đáp ứng yêu cầu chức năng | Chưa đạt | Có các mục nội dung và điều hướng chính; một số liên kết chưa hoạt động đúng như mong đợi. |
 | 2 | Giao diện, trải nghiệm người dùng và khả năng tương thích | Cần cải thiện | Đã chụp và kiểm tra trang tại viewport mobile, tablet, desktop; chưa kiểm thử trên thiết bị vật lý hoặc nhiều trình duyệt. |
-| 3 | Khả năng vận hành, xử lý lỗi và hiệu năng cơ bản | Cần cải thiện | Đây là trang tĩnh; chưa có kết quả chạy thử, đo hiệu năng hoặc kiểm tra lỗi tải tài nguyên. |
+| 3 | Khả năng vận hành, xử lý lỗi và hiệu năng cơ bản | Cần cải thiện | GitHub Pages truy cập được, CSS/ảnh tải thành công; chưa đo hiệu năng hoặc kiểm tra tình huống lỗi. |
 | 4 | Bảo mật, quản lý cấu hình và dữ liệu | Cần cải thiện | Không thấy cấu hình bí mật cần thiết trong tài liệu đã rà soát; chưa thực hiện kiểm thử bảo mật chuyên biệt. |
 | 5 | Chất lượng mã nguồn, cấu trúc repository và tài liệu bàn giao | Chưa đạt | Phát hiện lỗi markup, thông tin nhận diện không nhất quán và đường dẫn cây thư mục trong README chưa khớp. |
-| 6 | Khả năng triển khai, kiểm thử và cung cấp minh chứng | Cần cải thiện | Đã có ảnh responsive; chưa xác nhận lệnh Docker, chưa có kiểm thử tự động hoặc minh chứng triển khai. |
+| 6 | Khả năng triển khai, kiểm thử và cung cấp minh chứng | Cần cải thiện | GitHub Pages và nội dung triển khai đã xác minh; Docker, kiểm thử tự động và video demo chưa có minh chứng. |
 
 ## 3. Nội dung chi tiết theo tiêu chí
 
@@ -104,7 +104,7 @@
 
 Dự án có phạm vi phù hợp với một portfolio tĩnh đơn giản: cấu trúc trang, nội dung chính, CSS responsive và hướng dẫn chạy đã được chuẩn bị. Tuy nhiên, qua rà soát tĩnh phát hiện lỗi markup, một số liên kết chưa hoàn thiện, thông tin nhận diện chưa nhất quán và sai khác giữa cây thư mục trong README với repository. Các lệnh chạy và hiển thị thực tế cũng chưa được xác nhận.
 
-**Kết luận:** Chưa nên xác nhận bàn giao cuối cùng cho tới khi xử lý các mục **Chưa đạt** và thực hiện kiểm thử trình duyệt/triển khai tối thiểu. Đây là đánh giá dựa trên mã nguồn và tài liệu; không phải chứng nhận bảo mật hay kết quả kiểm thử trên mọi môi trường.
+**Kết luận:** GitHub Pages đã được mở thử và đối chiếu nội dung triển khai với HTML/CSS/ảnh trong repository; tuy vậy, chưa nên xác nhận bàn giao cuối cùng cho tới khi xử lý các mục **Chưa đạt**. Docker, hiệu năng, quét bảo mật và khả năng tương thích trên trình duyệt/thiết bị khác vẫn chưa được kiểm chứng. Đây không phải chứng nhận bảo mật hay kết quả kiểm thử trên mọi môi trường.
 
 ### Đề xuất ưu tiên trước khi bàn giao
 
@@ -113,18 +113,41 @@ Dự án có phạm vi phù hợp với một portfolio tĩnh đơn giản: cấ
 3. Thay `href="#"` bằng URL dự án thật hoặc bỏ liên kết nếu dự án chưa có trang đích.
 4. Cập nhật các liên kết email, GitHub và mạng xã hội để nhãn, nội dung và URL cùng trỏ đúng đích.
 5. Sửa cây thư mục trong README để phản ánh đúng vị trí `docs/RELEASENOTE.md`.
-6. Chạy thử trên trình duyệt ở ít nhất một kích thước di động và một kích thước desktop; xác nhận điều hướng, tải CSS/ảnh và liên kết.
+6. Tiếp tục kiểm tra điều hướng nội bộ, liên kết liên hệ và trải nghiệm trên trình duyệt/thiết bị thực tế; lưu lại kết quả.
 7. Chạy thử các hướng dẫn Python và Docker nếu đây là phương thức triển khai bàn giao; lưu lại lệnh và kết quả.
-8. Đính kèm ảnh chụp màn hình hoặc log kiểm thử; cân nhắc kiểm tra hiệu năng và quét bảo mật phù hợp với môi trường triển khai.
+8. Bổ sung log E2E và kiểm tra hiệu năng/quét bảo mật phù hợp với môi trường triển khai; ảnh responsive hiện đã có trong `docs/screenshots/`.
 
 ## 5. Kết quả kiểm thử bổ sung
 
 | Nội dung | Kết quả |
 |---|---|
 | Rà soát tĩnh HTML/CSS/tài liệu | Đã thực hiện; phát hiện các vấn đề được liệt kê trong báo cáo. |
-| Mở trang trong trình duyệt | Đã thực hiện với tệp HTML cục bộ bằng Microsoft Edge headless; đã kiểm tra nội dung hiển thị và chụp ảnh ở ba kích thước viewport. Chưa kiểm tra máy chủ HTTP. |
+| Mở trang trong trình duyệt | Đã thực hiện với GitHub Pages và bản HTML cục bộ bằng Microsoft Edge; đã kiểm tra nội dung hiển thị ở ba kích thước viewport. |
 | Chụp ảnh responsive | Đã thực hiện: 390 × 844, 768 × 1024 và 1440 × 1000; ảnh lưu trong `docs/screenshots/`. |
+| Kiểm tra GitHub Pages | HTTP 200; đã xác nhận trang, CSS và ảnh đại diện tải được. SHA-256 của `index.html`, `assets/css/styles.css` và `assets/img/images.jpg` trên Pages trùng khớp với repository tại thời điểm kiểm tra. |
+| Kiểm tra responsive trên Pages | Tại viewport 390 × 844, 768 × 1024 và 1440 × 1000: đủ 4 anchor section, liên kết điều hướng hiển thị, ảnh tải thành công; lưới lần lượt 1, 2 và 3 cột. |
 | Kiểm thử Docker | Chưa thực hiện. |
 | Đo hiệu năng | Chưa thực hiện. |
 | Quét bảo mật tự động | Chưa thực hiện. |
 | Kiểm tra định dạng Markdown | Đã rà soát nội dung và khoảng trắng cuối dòng; chưa chạy Markdown linter. |
+
+## 6. Chấm điểm theo tiêu chí A2.2
+
+Điểm dưới đây là đánh giá theo bằng chứng có trong repository và kiểm tra triển khai tại thời điểm lập báo cáo. Các tiêu chí về trình bày/demo chỉ có thể chấm tạm thời nếu chưa có video hoặc buổi demo được quan sát.
+
+| Tiêu chí | Trọng số | Điểm | Nhận xét và căn cứ |
+|---|---:|---:|---|
+| A2.2.TC1 — Repository, commit và quá trình sửa lỗi | 20% | **15/20** | Có tối thiểu 3 commit chứa thay đổi có ý nghĩa: sửa ảnh responsive (`e1e7f7f`), release note (`24978b2`), README (`9adaee9`) và báo cáo (`8174c8a`). Có commit `fix(img): responsive image, closes #1` thể hiện sửa lỗi. Trừ điểm vì một số thông điệp chưa rõ/chưa chuẩn (`fix(feat): change`, `docs(note) : Add ...`) và lịch sử còn commit tự động của môi trường. |
+| A2.2.TC2 — README và AI_LOG | 15% | **11/15** | README tiếng Việt trình bày dự án, yêu cầu, cấu hình, chạy trên Windows/macOS/Linux/Docker; tuy nhiên cây thư mục trong README chưa khớp vị trí hiện tại của release note. AI_LOG có ghi thay đổi lớn và nội dung cập nhật, nhưng hiện mới có một mục; chưa nêu rõ phần việc AI hỗ trợ, phần người học tự thực hiện/đối chiếu, nguồn tham khảo và xác nhận trách nhiệm học thuật. |
+| A2.2.TC3 — GitHub Pages, tính nhất quán và minh chứng | 30% | **27/30** | URL [GitHub Pages](https://huy020608.github.io/My_cV/) trả HTTP 200. Đã kiểm tra trang tại ba viewport; bốn section điều hướng có đủ, ảnh tải thành công và lưới đổi 1/2/3 cột. SHA-256 của HTML, CSS và ảnh đại diện trực tuyến trùng repository. Trừ điểm vì một số liên kết dự án/liên hệ còn placeholder hoặc sai đích; chưa kiểm tra trên nhiều trình duyệt/thiết bị. |
+| A2.2.TC4 — Release note v1.0 và luồng end-to-end | 20% | **15/20** | `docs/RELEASENOTE.md` ghi phiên bản v1.0.0, chức năng mới, lỗi sửa và giới hạn. Luồng triển khai đã kiểm chứng một phần bằng truy cập Pages và đối chiếu hash tài nguyên; ảnh viewport được lưu kèm. Trừ điểm vì release note chưa trỏ tới minh chứng/kịch bản E2E cụ thể, một số lỗi/giới hạn còn được ghi nhận và chưa có video/log kiểm thử phát hành. |
+| A2.2.TC5 — Demo và giải thích quyết định kỹ thuật | 15% | **6/15** | README, release note và báo cáo cung cấp cơ sở để giải thích HTML/CSS tĩnh, responsive, Docker tùy chọn và giới hạn sản phẩm. Chưa có kịch bản, video hoặc buổi demo được quan sát; chưa có bằng chứng về phần trả lời câu hỏi nên điểm này chỉ là đánh giá tài liệu, không đại diện cho kỹ năng trình bày trực tiếp. |
+| **Tổng điểm** | **100%** | **74/100** | **Đạt một phần; cần khắc phục các mục ưu tiên và bổ sung minh chứng demo trước khi bàn giao/chấm chính thức.** |
+
+### Ưu tiên cải thiện để tăng điểm
+
+1. Chuẩn hóa thông điệp commit rõ ràng, nhất quán; bảo đảm commit mô tả cụ thể lỗi, thay đổi và kết quả kiểm thử.
+2. Bổ sung AI_LOG trung thực: phân biệt nội dung AI hỗ trợ với phần tự làm, cách kiểm chứng, nguồn tham khảo và trách nhiệm của người nộp bài; chỉ ghi việc đã thực hiện thật.
+3. Hoàn thiện URL các dự án, email, GitHub và mạng xã hội; đồng bộ tên hiển thị trên trang với tên dự án.
+4. Bổ sung vào release note kịch bản E2E có bước thực hiện, kết quả mong đợi/thực tế và liên kết ảnh/log liên quan.
+5. Chuẩn bị demo ngắn: giới thiệu mục tiêu, điều hướng các section, minh họa responsive, giải thích HTML/CSS và các giới hạn; thử trước trên URL Pages đang hoạt động.
